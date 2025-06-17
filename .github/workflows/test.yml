@@ -17,9 +17,9 @@ jobs:
       - name: Install dependencies
         run: |
           npm i
-      - name: Modify export to sleep for 6 minutes in between batches
+      - name: Modify export to sleep for 5 minutes in between batches
         run: |
-          sed -i 's/const userList = ret.body.users;/const userList = ret.body.users; await new Promise((res, _) => setTimeout(res, 360_000))/g' node_modules/firebase-tools/lib/accountExporter.js
+          sed -i 's/const userList = ret.body.users;/const userList = ret.body.users; await new Promise((res, _) => setTimeout(res, 300_000))/g' node_modules/firebase-tools/lib/accountExporter.js
         shell: bash
       - name: Run auth:export
         run: |

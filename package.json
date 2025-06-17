@@ -1,0 +1,15 @@
+{
+  "name": "8369-github",
+  "version": "1.0.0",
+  "scripts": {
+    "firebase:version": "firebase --version",
+    "auth:export": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "firebase-tools": "github:firebase/firebase-tools#aalej-open"
+  }
+}

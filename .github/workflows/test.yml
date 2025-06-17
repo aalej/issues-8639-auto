@@ -19,7 +19,7 @@ jobs:
           npm i
       - name: Modify MAX_BATCH_SIZE in auth-export.js
         run: |
-          sed -i 's/MAX_BATCH_SIZE=1000/MAX_BATCH_SIZE=1/g' node_modules/firebase-tools/lib/commands/auth-export.js
+          sed -i 's/MAX_BATCH_SIZE = 1000/MAX_BATCH_SIZE = 1/g' node_modules/firebase-tools/lib/commands/auth-export.js
         shell: bash
       - name: Run auth:export
         run: |

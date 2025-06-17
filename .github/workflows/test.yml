@@ -14,15 +14,14 @@ jobs:
       - uses: "google-github-actions/auth@v2"
         with:
           credentials_json: "${{ secrets.GOOGLE_CREDENTIALS }}"
-      - name: Install Firebase CLI
+      - name: Install dependencies
         run: |
-          npm i -g firebase-tools@13.21.0
-      # - name: Install dependencies
-      #   run: |
-      #     cd nextjs-app/
-      #     npm i
+          npm i
+      - name: Modify MAX_BATCH_SIZE in auth-export.js
+        run: |
+          sed -i 's/MAX_BATCH_SIZE=1000/MAX_BATCH_SIZE=1/g' node_modules/firebase-tools/lib/commands/auth-export.js
+        shell: bash
       - name: Run auth:export
         run: |
           node --version
-          firebase --version
-          firebase auth:export auth.csv --project ${{ secrets.PROJECT_ID }} --debug
+          npm run auth:export -- --project ${{ secrets.PROJECT_ID }}

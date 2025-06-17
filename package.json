@@ -3,13 +3,13 @@
   "version": "1.0.0",
   "scripts": {
     "firebase:version": "firebase --version",
-    "auth:export": "echo \"Error: no test specified\" && exit 1"
+    "auth:export": "firebase auth:export auth.csv --debug"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "description": "",
   "dependencies": {
-    "firebase-tools": "github:firebase/firebase-tools#aalej-open"
+    "firebase-tools": "^13.21.0"
   }
 }

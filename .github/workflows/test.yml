@@ -17,11 +17,12 @@ jobs:
       - name: Install dependencies
         run: |
           npm i
-      - name: Modify MAX_BATCH_SIZE in auth-export.js
+      - name: Modify export to sleep for 6 minutes in between batches
         run: |
-          sed -i 's/MAX_BATCH_SIZE = 1000/MAX_BATCH_SIZE = 1/g' node_modules/firebase-tools/lib/commands/auth-export.js
+          sed -i 's/const userList = ret.body.users;/const userList = ret.body.users; await new Promise((res, _) => setTimeout(res, 360_000))/g' node_modules/firebase-tools/lib/accountExporter.js
         shell: bash
       - name: Run auth:export
         run: |
           node --version
+          firebase --version
           npm run auth:export -- --project ${{ secrets.PROJECT_ID }}

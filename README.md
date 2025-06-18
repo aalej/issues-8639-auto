@@ -51,3 +51,39 @@ Error: HTTP Error: 401, Request had invalid authentication credentials. Expected
 ```
 
 - 13.0.0
+
+```
+Error: HTTP Error: 401, Request had invalid authentication credentials. Expected OAuth 2 access token, login cookie or other valid authentication credential. See https://developers.google.com/identity/sign-in/web/devconsole-project.
+[2025-06-18T15:34:14.286Z] Error Context: ***
+  "body": ***
+    "error": ***
+      "code": 401,
+      "message": "Request had invalid authentication credentials. Expected OAuth 2 access token, login cookie or other valid authentication credential. See https://developers.google.com/identity/sign-in/web/devconsole-project.",
+      "errors": [
+        ***
+          "message": "Invalid Credentials",
+          "domain": "global",
+          "reason": "authError",
+          "location": "Authorization",
+          "locationType": "header"
+        ***
+      ],
+      "status": "UNAUTHENTICATED",
+      "details": [
+        ***
+          "@type": "type.googleapis.com/google.rpc.ErrorInfo",
+          "reason": "ACCESS_TOKEN_EXPIRED",
+          "domain": "googleapis.com",
+          "metadata": ***
+            "method": "google.cloud.identitytoolkit.v1.AccountManagementService.DownloadAccount",
+            "service": "identitytoolkit.googleapis.com"
+          ***
+        ***
+      ]
+    ***
+  ***,
+  "response": ***
+    "statusCode": 401
+  ***
+***
+```

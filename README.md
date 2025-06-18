@@ -2,6 +2,8 @@
 
 ## Versions tested
 
+- 14.7.0 - ci token
+
 - 13.21.0
 
 ```

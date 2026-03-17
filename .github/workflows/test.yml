@@ -25,4 +25,4 @@ jobs:
         run: |
           node --version
           npm run firebase:version
-          npm run auth:export -- --project ${{ secrets.PROJECT_ID }} --token ${{ secrets.FIREBASE_TOKEN }}
+          npm run auth:export -- --project ${{ secrets.PROJECT_ID }}
